@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -d -p 8080:80 --name my-react-container my-react-app
+          docker run -d -p 8081:3000 --name my-react-container my-react-app
 
       - name: Check running containers
         run: docker ps -a
@@ -40,7 +40,7 @@ jobs:
         run: docker logs my-react-container
 
       - name: Test app endpoint
-        run: curl -v http://localhost:8080 || true
+        run: curl -v http://localhost:8081 || true
 
       - name: Install Ngrok (for external access)
         run: |
