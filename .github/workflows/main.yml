@@ -27,11 +27,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-react-app .
+          docker build -t my-react-app1 .
 
       - name: Run Docker container
         run: |
-          docker run -d -p 8081:3000 --name my-react-container my-react-app
+          docker run -d -p 8081:3000 --name my-react-container my-react-app1
 
       - name: Check running containers
         run: docker ps -a
